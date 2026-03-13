@@ -2,8 +2,7 @@ import mlflow.pyfunc
 import pandas as pd
 import os
 
-# Setup the hardcoded paths you found
-# We point to the folder containing the 'MLmodel' file
+# Point to the folder containing the model file
 LR_PATH = r"mlartifacts\1\models\m-0685a8cd675b4f21b25ceb5d353658b8\artifacts"
 XGB_PATH = r"mlartifacts\1\models\m-dbaab589d8364ceba1bc9c83894e7403\artifacts"
 
@@ -31,4 +30,5 @@ for model_info in models_to_run:
         except Exception as e:
             print(f"Error loading model from path: {e}")
     else:
+
         print(f"Directory not found: {model_info['path']}")
